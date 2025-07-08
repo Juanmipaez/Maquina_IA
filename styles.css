@@ -1,0 +1,146 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+  color: #1e1e1e;
+}
+
+header {
+  text-align: center;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  padding: 3rem 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+  animation: rotateGlow 20s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rotateGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  z-index: 1;
+  position: relative;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+}
+
+header p {
+  font-size: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto;
+  z-index: 1;
+  position: relative;
+}
+
+header button {
+  margin-top: 2rem;
+  padding: 0.9rem 1.7rem;
+  font-size: 1.1rem;
+  background-color: #00b894;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+  z-index: 1;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+header button:hover {
+  background-color: #019875;
+  transform: scale(1.05);
+}
+
+main {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  transition: filter 1s ease-in-out;
+}
+
+section.cambio {
+  margin-bottom: 4rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 2rem;
+  animation: fadeIn 1s ease;
+}
+
+.cambio h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.contenido {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.imagen {
+  width: 320px;
+  max-width: 100%;
+  border-radius: 12px;
+  display: none;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: opacity 1s ease;
+}
+
+.texto {
+  flex: 1;
+  min-width: 250px;
+}
+
+.texto p {
+  display: none;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.reflexion {
+  background-color: #e3f2fd;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  font-style: italic;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 4rem;
+  animation: fadeIn 1.5s ease;
+}
+
+.old-version .old,
+.new-version .new {
+  display: block !important;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.old-version .new,
+.new-version .old {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
